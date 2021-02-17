@@ -1,21 +1,16 @@
-#Assignment 5
+---
+title: "Brewer Assignment 5"
+author: "Arial Brewer"
+date: "2/17/2021"
+output: pdf_document
+---
+
+
+
+# Below is code for Siscowet Lake Trout length vs. age plot
+```
 library(tidyverse)
-
 data <- read.csv("siscowet.csv")
-
-#plot age vs. length
-data %>%
-  ggplot(aes(x=age,y=len)) +
-  geom_point()
-
-#add color to sex data and remove gray background
-data %>%
-  ggplot(aes(x=age,y=len,
-             color=sex)) +
-  geom_point()+
-  theme_minimal()
-
-#add axis titles,main title,model fit and color blindness palette
 siscowet <- data %>%
   ggplot(aes(x=age,y=len,
              color=sex)) +
@@ -31,11 +26,6 @@ siscowet <- data %>%
   geom_smooth(method = "lm", se = FALSE)
 
 plot(siscowet)
-
-
-
-
-
-
+```
 
 
